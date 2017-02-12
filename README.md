@@ -1,4 +1,4 @@
-# newIT
+# Common Programmin though
 
 Git Hub
 
