@@ -1,14 +1,23 @@
+# Common query of SQL
+# Installation of `Codeigniator`, `Express JS` and `Zend framework`
+# Required server configuration in PHP
+# Mongo DB like condition
+
+{Sql Query }
+
 SELECT u.uid,u.emailid 
 FROM USER u 
 LEFT JOIN (SELECT ul.uid, MAX(ul.login_time) AS login_tm FROM user_log ul GROUP BY ul.uid ) uld ON u.uid = uld.uid 
 WHERE uld.login_tm < 1455559472;
 
 
-Insert the value using another table value as input
+{ Insert the value using another table value as input }
+
 Insert into <table_name> (field1, field2, ...)
 select (field1, filed2, ...) from <table_name> where <condition>
 
-Update the values using another table values as input
+{ Update the values using another table values as input }
+
 update <table_name> set field1 , field2 ..
 select (field1, field2...) from <table_name> where <condition>
 
@@ -24,13 +33,12 @@ Listen 81
 </VirtualHost>
 {End}
 
-Installation:
+{ Installation: Zend Framwork }
 
 Zend (1.12.xx)(without composer)::
-
 Zend (1.12.xx)(with composer):: https://www.youtube.com/watch?v=NJVS5yt5fHw 
 
-Node JS
+{ Node JS :: Express JS }
 
 configuration- 
 install the express-generator JS
@@ -54,11 +62,13 @@ install the express-generator JS
     ├── index.jade
     └── layout.jade
 
-====Mongo DB like conditions
+{ Mongo DB like conditions }
+
 db.<colloection_name>.find({'<field_name>':/^fp/},{'<field_name>':/.*m.*/}).count()
 db.<colloection_name>.remove()
 
-Multiple Server Configuration in PHP
+{ Multiple Server Configuration in PHP }
+
 1. open apache/config/extra/
 2. httpd-vhosts.conf
 <VirtualHost *:81>    
@@ -77,9 +87,10 @@ Multiple Server Configuration in PHP
   127.0.0.1    localhost
   127.0.0.1    mysite.localhost.com
 
-Note: if you wan run the PHP in command prompt then please type >php -s {server} localhost:81
+Note: if you want run the PHP in command prompt then please type >php -s {server} localhost:81
 
--> Codeigniator Installation
+{ Codeigniator Installation }
+
 https://www.formget.com/insert-data-into-database-using-codeigniter/ 
 
 1. Open the application/config/config.php file with a text editor and set your base URL. If you intend to use encryption or sessions, set your encryption key.
